@@ -127,3 +127,9 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.CustomUser'
+
+# URL для доступа к медиафайлам через браузер
+MEDIA_URL = '/media/'
+
+# Локальный путь для хранения загруженных файлов
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
