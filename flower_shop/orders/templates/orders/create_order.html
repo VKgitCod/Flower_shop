@@ -4,6 +4,12 @@
 
 {% block content %}
 <h2>Оформление заказа</h2>
+
+{% if error_message %}
+<div class="alert alert-danger" role="alert">
+    {{ error_message }}
+</div>
+{% else %}
 <form method="post" class="mt-4">
     {% csrf_token %}
     {{ form.as_p }}
@@ -24,4 +30,6 @@
     </div>
     <button type="submit" class="btn btn-primary">Оформить заказ</button>
 </form>
+{% endif %}
+<p class="text-muted mt-3">Заказы принимаются только в рабочее время: с 9:00 до 23:00.</p>
 {% endblock %}
